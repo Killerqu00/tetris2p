@@ -4,7 +4,6 @@ class Player
     {
         this.DROP_SLOW = 1000;
         this.DROP_FAST = 50;
-	    this.DROP_PAUSE = 99999999;
 
         this.tetris = tetris;
         this.arena = tetris.arena;
@@ -15,7 +14,7 @@ class Player
         this.pos = {x: 0, y: 0};
         this.matrix = null;
         this.score = 0;
-
+        this.pause = true;
         this.reset();
     }
 
@@ -94,7 +93,7 @@ class Player
     update(deltaTime)
     {
         this.dropCounter += deltaTime;
-        if (this.dropCounter > this.dropInterval) {
+        if (this.dropCounter > this.dropInterval && this.pause !== true) {
             this.drop();
         }
     }
