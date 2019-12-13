@@ -86,6 +86,7 @@ const keyListener = (event) => {
         }
     });
 };
-
+let audio = new Audio("audio/anothermedium.mp3");
+audio.play();
 document.addEventListener('keydown', keyListener);
 document.addEventListener('keyup', keyListener);
