@@ -82,11 +82,16 @@ const keyListener = (event) => {
         if (event.keyCode === key[5]) {
             if (event.type === 'keydown') {
                 player.pause = !player.pause;
+                if (player.pause === true) {
+                    audio.pause();
+                } else {
+                    audio.play();
+                }
             }
         }
     });
 };
-let audio = new Audio("audio/anothermedium.mp3");
-audio.play();
+let adc = 'core';
+let audio = new Audio('audio/'+adc+'.mp3');
 document.addEventListener('keydown', keyListener);
 document.addEventListener('keyup', keyListener);

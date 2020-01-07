@@ -10,7 +10,7 @@ class Player
 
         this.dropCounter = 0;
         this.dropInterval = this.DROP_SLOW;
-
+        this.start = Date.now();
         this.pos = {x: 0, y: 0};
         this.matrix = null;
         this.score = 0;
@@ -96,5 +96,7 @@ class Player
         if (this.dropCounter > this.dropInterval && this.pause !== true) {
             this.drop();
         }
+        this.DROP_SLOW = 2000-(this.score/1.5);
+        this.dropInterval = this.DROP_SLOW;
     }
 }

@@ -32,6 +32,18 @@
         <div class="score"></div>
         <canvas class="tetris" width="240" height="400"></canvas>
     </div>
+    <div class="pauseicon">
+        <img name = 'pause' scr='icons/pause.jpg'>
+    </div>
+    <script>
+        function changeIcon() {
+            if (player.pause===true) {
+                document.pauseicon.src = 'icons/pause.jpg';
+            } else {
+                document.pauseicon.scr = ''
+            }
+        }
+    </script>
     <div class="player">
         <div class="score"></div>
         <canvas class="tetris" width="240" height="400"></canvas>
