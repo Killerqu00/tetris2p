@@ -89,6 +89,10 @@ const keyListener = (event) => {
                 }
             }
         }
+        //if ((Date.now()-tetri[0].player.start)/1000>10) {
+        //    this.pause = true;
+        //    alert("Конец!")
+        //}
     });
 };
 let adc = 'core';

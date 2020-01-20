@@ -2,7 +2,7 @@ class Player
 {
     constructor(tetris)
     {
-        this.DROP_SLOW = 1000;
+        this.DROP_SLOW = 800;
         this.DROP_FAST = 50;
 
         this.tetris = tetris;
@@ -92,11 +92,11 @@ class Player
 
     update(deltaTime)
     {
+        //this.DROP_SLOW = 1000-(this.score/1.5);
+        //this.dropInterval = this.DROP_SLOW;
         this.dropCounter += deltaTime;
         if (this.dropCounter > this.dropInterval && this.pause !== true) {
             this.drop();
         }
-        this.DROP_SLOW = 2000-(this.score/1.5);
-        this.dropInterval = this.DROP_SLOW;
     }
 }
