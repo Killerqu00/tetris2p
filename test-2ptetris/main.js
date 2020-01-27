@@ -51,7 +51,6 @@ const playerElements = document.querySelectorAll('.player');
     const tetris = new Tetris(element);
     tetri.push(tetris);
 });
-
 const keyListener = (event) => {
     [
         [65, 68, 87, 87, 83, 32],
@@ -82,20 +81,14 @@ const keyListener = (event) => {
         if (event.keyCode === key[5]) {
             if (event.type === 'keydown') {
                 player.pause = !player.pause;
-                if (player.pause === true) {
-                    audio.pause();
-                } else {
-                    audio.play();
-                }
             }
         }
-        //if ((Date.now()-tetri[0].player.start)/1000>10) {
-        //    this.pause = true;
-        //    alert("Конец!")
-        //}
     });
 };
-let adc = 'core';
-let audio = new Audio('audio/'+adc+'.mp3');
+document.addEventListener('keydown', function (event) {
+    if (event.ctrlKey && event.keyCode == 85 || event.ctrlKey && event.shiftKey && event.keyCode == 73 || event.keyCode == 123 || event.ctrlKey && event.keyCode == 83) {
+        event.preventDefault();
+    }
+});
 document.addEventListener('keydown', keyListener);
 document.addEventListener('keyup', keyListener);
